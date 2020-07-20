@@ -1,7 +1,7 @@
 FROM php:7.3-cli
 
-RUN apt-get update && apt-get install -y default-mysql-client git wget\
-    && docker-php-ext-install pdo_mysql pcntl
+RUN apt-get update && apt-get install -y default-mysql-client git wget zlib1g-dev \
+    && docker-php-ext-install pdo_mysql pcntl zip bcmath
 
 RUN wget https://getcomposer.org/installer -O - -q | php -- --install-dir=/bin --filename=composer --quiet
 
