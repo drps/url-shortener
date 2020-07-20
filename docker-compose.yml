@@ -45,7 +45,9 @@ services:
         ports:
             - "33061:3306"
     node:
-        image: node:12.18-alpine
+        build:
+            context: ./
+            dockerfile: docker/node.docker
         volumes:
             - ./:/var/www
         working_dir: /var/www
